@@ -1,0 +1,8 @@
+D:\Documents\Uni Work\C# Projects\OOP A01\CMP1903M A01 2223\CMP1903M A01 2223\obj\Debug\CMP1903M A01 2223.csproj.AssemblyReference.cache
+D:\Documents\Uni Work\C# Projects\OOP A01\CMP1903M A01 2223\CMP1903M A01 2223\obj\Debug\CMP1903M A01 2223.csproj.SuggestedBindingRedirects.cache
+D:\Documents\Uni Work\C# Projects\OOP A01\CMP1903M A01 2223\CMP1903M A01 2223\obj\Debug\CMP1903M A01 2223.csproj.CoreCompileInputs.cache
+D:\Documents\Uni Work\C# Projects\OOP A01\CMP1903M A01 2223\CMP1903M A01 2223\bin\Debug\CMP1903M A01 2223.exe.config
+D:\Documents\Uni Work\C# Projects\OOP A01\CMP1903M A01 2223\CMP1903M A01 2223\bin\Debug\CMP1903M A01 2223.exe
+D:\Documents\Uni Work\C# Projects\OOP A01\CMP1903M A01 2223\CMP1903M A01 2223\bin\Debug\CMP1903M A01 2223.pdb
+D:\Documents\Uni Work\C# Projects\OOP A01\CMP1903M A01 2223\CMP1903M A01 2223\obj\Debug\CMP1903M A01 2223.exe
+D:\Documents\Uni Work\C# Projects\OOP A01\CMP1903M A01 2223\CMP1903M A01 2223\obj\Debug\CMP1903M A01 2223.pdb

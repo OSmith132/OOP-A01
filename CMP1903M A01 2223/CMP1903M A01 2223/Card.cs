@@ -1,18 +1,63 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
 
-namespace CMP1903M_A01_2223
+class Card
 {
-    class Card
+
+    private int _value;
+    private int _suit;
+
+    public int Value
     {
-        //Base for the Card class.
-        //Value: numbers 1 - 13
-        //Suit: numbers 1 - 4
-        //The 'set' methods for these properties could have some validation
-        public int Value { get; set; }
-        public int Suit { get; set; }
+
+        get { return _value; }
+        set
+        {
+            if (value > 0 && value < 14) // has to be a valid value
+            {
+                _value = value;
+            }
+        }
+
     }
+
+    public int Suit 
+    { 
+
+        get { return _suit; } 
+        set { 
+                if (value > 0 && value < 5) // has to be a valid suit
+                {
+                    _suit = value;
+                }
+            } 
+
+    }
+
+
+    public Card(int value, int suit)
+    {
+
+        if (value > 0 && value < 14) // has to be a valid value
+        {
+            _value = value;
+        } 
+        else 
+        {
+            _value = 1; // Defaults to 1 if no a valid value
+        }
+
+
+
+        if (suit > 0 && suit < 5) // has to be a valid suit
+        {
+            _suit = suit;
+        }
+        else 
+        { 
+           _suit = 1; // Defaults to 1 if no a valid suit
+        }
+
+    }
+
 }
+

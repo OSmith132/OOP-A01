@@ -1,16 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace CMP1903M_A01_2223
-{
     class Program
     {
         static void Main(string[] args)
         {
 
+            Test.runTest(); // runs tests
+
+            Console.ReadLine(); // Waits for input to close window
+
         }
+
+        
     }
-}
+

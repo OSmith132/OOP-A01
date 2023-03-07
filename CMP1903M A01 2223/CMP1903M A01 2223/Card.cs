@@ -3,7 +3,7 @@
 class Card
 {
 
-    private int _value;
+    private int _value; // Example of encapsulation
     private int _suit;
 
     public int Value

@@ -13,6 +13,8 @@ using System.Collections.Generic;
             // Instantiates the pack object
             Pack Pack = new Pack();
 
+            // Shows the number of cards in a pack
+            Console.WriteLine(Pack.pack.Count);
 
             // Demonstrates the Fischer-Yates Shuffle and outputs the shuffled pack
             Console.WriteLine("Fischer-Yates Shuffle: " + Pack.shuffleCardPack(1));

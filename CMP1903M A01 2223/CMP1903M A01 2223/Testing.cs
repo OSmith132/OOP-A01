@@ -78,6 +78,34 @@ using System.Collections.Generic;
 
 
 
+            Hand hand = new Hand();
+
+            // Demonstrates adding a card to the hand and dealing it from the hand
+            hand.AddCard(new Card(1, 1));
+            Card card4 = hand.DealCard(0);
+            Console.WriteLine("\n\n\nCard in hand: Value = " + card4.Value + " Suit = " + card4.Suit);
+
+
+            // Demonstrates adding multiple cards to the hand
+            for (int i = 1; i < 5; i++) 
+            {
+                for (int j = 1; j < 5; j++)
+                {
+                    hand.AddCard(new Card(j, i)); // adds 16 cards to the hand
+                }
+            }
+
+            Console.WriteLine("\n\nAdding 16 new cards to hand:");
+            foreach (Card card in hand.hand)
+            {
+                Console.WriteLine("Value = " + card.Value + " Suit = " + card.Suit);
+            }
+
+
+            // Demonstrates getting a card from the hand at a given index
+            Card card5 = hand.GetCardAt(3);
+            Console.WriteLine("\n\nCard in hand at 3rd index: Value = " + card5.Value + " Suit = " + card5.Suit);
+
 
     }
 

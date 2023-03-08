@@ -115,7 +115,7 @@ using System.Collections.Generic;
         }
 
         public static void AddCard(List<Card> cards) // Returns a list of card to the pack (Additional Method)
-    {
+        {
             pack.AddRange(cards);
         }
 

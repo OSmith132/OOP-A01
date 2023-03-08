@@ -10,14 +10,12 @@ using System.Collections.Generic;
         {
 
 
-            // Instantiates the pack object
-            Pack Pack = new Pack();
 
             // Shows the number of cards in a pack
-            Console.WriteLine(Pack.pack.Count);
+            Console.WriteLine("Number of cards in the pack: " + Pack.pack.Count);
 
             // Demonstrates the Fischer-Yates Shuffle and outputs the shuffled pack
-            Console.WriteLine("Fischer-Yates Shuffle: " + Pack.shuffleCardPack(1));
+            Console.WriteLine("\nFischer-Yates Shuffle: " + Pack.ShuffleCardPack(1));
             foreach (Card card in Pack.pack)
             {
                 Console.WriteLine("Value = " + card.Value + " Suit = " + card.Suit);
@@ -25,7 +23,7 @@ using System.Collections.Generic;
 
 
             // Demonstrates the Riffle Shuffle and outputs the shuffled pack
-            Console.WriteLine("\n\nRiffle Shuffle: " + Pack.shuffleCardPack(2));
+            Console.WriteLine("\n\nRiffle Shuffle: " + Pack.ShuffleCardPack(2));
             foreach (Card card in Pack.pack)
             {
                 Console.WriteLine("Value = " + card.Value + " Suit = " + card.Suit);
@@ -34,7 +32,7 @@ using System.Collections.Generic;
 
             // Demonstrates the deal and dealCard functions of the Pack class
             Console.WriteLine("\n\nDeal one card:");
-            Card card1 = Pack.deal();
+            Card card1 = Pack.Deal();
             if (card1 != null) // deal method will return null if there are no cards left in pack
             {
                 Console.WriteLine("Value = " + card1.Value + " Suit = " + card1.Suit);
@@ -46,7 +44,7 @@ using System.Collections.Generic;
 
 
             // Demonstrates the deal and dealCard functions of the Pack class
-            List<Card> cards = Pack.dealCard(15);
+            List<Card> cards = Pack.DealCard(15);
             Console.WriteLine("\n\nDeal 15 Cards using dealCard method");
             foreach (Card card2 in cards)
             {
@@ -56,8 +54,8 @@ using System.Collections.Generic;
 
             // Demonstrates adding a card to the pack
             Pack.pack = new List<Card>(); // clears pack
-            Pack.addCard(new Card(1, 1)); // adds new card
-            Card card3 = Pack.deal();
+            Pack.AddCard(new Card(1, 1)); // adds new card
+            Card card3 = Pack.Deal();
             Console.WriteLine("\n\nAdding one new card:");
             Console.WriteLine("Value = " + card3.Value + " Suit = " + card3.Suit);
 
@@ -71,16 +69,19 @@ using System.Collections.Generic;
                     Pack.pack.Add(new Card(j, i));
                 }
             }
-            List<Card> cards1= Pack.dealCard(16);
+            List<Card> cards1= Pack.DealCard(16);
             Console.WriteLine("\n\nAdding 16 new cards:");
             foreach (Card card in cards1) 
             { 
                 Console.WriteLine("Value = " + card.Value + " Suit = " + card.Suit);
             }
 
-    }
+
+
 
     }
+
+}
         
 
     

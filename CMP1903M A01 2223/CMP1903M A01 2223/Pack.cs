@@ -21,7 +21,7 @@ using System.Collections.Generic;
 
 
 
-        public static bool shuffleCardPack(int typeOfShuffle)
+        public static bool ShuffleCardPack(int typeOfShuffle)
         {
 
             // Guard Clause of more than 1 cards in a pack to shuffle
@@ -93,7 +93,7 @@ using System.Collections.Generic;
         }
 
 
-        public static Card deal() // Deals one card from the pack (and removes it from the deck)
+        public static Card Deal() // Deals one card from the pack (and removes it from the deck)
             {
 
                 if (pack.Count > 0)
@@ -109,19 +109,19 @@ using System.Collections.Generic;
             }
 
 
-        public static void addCard(Card card) // Returns a card to the pack (Additional Method)
+        public static void AddCard(Card card) // Returns a card to the pack (Additional Method)
         {
             pack.Add(card);
         }
 
-        public static void addCard(List<Card> cards) // Returns a list of card to the pack (Additional Method)
+        public static void AddCard(List<Card> cards) // Returns a list of card to the pack (Additional Method)
     {
             pack.AddRange(cards);
         }
 
 
 
-        public  List<Card> dealCard(int amount) // Deals multiple cards from the deck
+        public static List<Card> DealCard(int amount) // Deals multiple cards from the deck
         {
             if(amount >= pack.Count) // Guard clause if user tries to deal more cards than is left in the pack -> will empty pack
             {

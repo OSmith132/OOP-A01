@@ -12,11 +12,11 @@ using System.Collections.Generic;
 
 
             // Shows the number of cards in a pack
-            Console.WriteLine("Number of cards in the pack: " + Pack.pack.Count);
+            Console.WriteLine("Number of cards in the pack: " + Pack.PackOfCards.Count);
 
             // Demonstrates the Fischer-Yates Shuffle and outputs the shuffled pack
             Console.WriteLine("\nFischer-Yates Shuffle: " + Pack.ShuffleCardPack(1));
-            foreach (Card card in Pack.pack)
+            foreach (Card card in Pack.PackOfCards)
             {
                 Console.WriteLine("Value = " + card.Value + " Suit = " + card.Suit);
             }
@@ -24,7 +24,7 @@ using System.Collections.Generic;
 
             // Demonstrates the Riffle Shuffle and outputs the shuffled pack
             Console.WriteLine("\n\nRiffle Shuffle: " + Pack.ShuffleCardPack(2));
-            foreach (Card card in Pack.pack)
+            foreach (Card card in Pack.PackOfCards)
             {
                 Console.WriteLine("Value = " + card.Value + " Suit = " + card.Suit);
             }
@@ -53,7 +53,7 @@ using System.Collections.Generic;
 
 
             // Demonstrates adding a card to the pack
-            Pack.pack = new List<Card>(); // clears pack
+            Pack.PackOfCards = new List<Card>(); // clears pack
             Pack.AddCard(new Card(1, 1)); // adds new card
             Card card3 = Pack.Deal();
             Console.WriteLine("\n\nAdding one new card:");
@@ -61,12 +61,12 @@ using System.Collections.Generic;
 
 
             // Demonstrates adding multiple cards to the pack
-            Pack.pack = new List<Card>(); // clears pack
+            Pack.PackOfCards = new List<Card>(); // clears pack
             for (int i = 1; i < 5; i++) // Adds cards to pack
             {
                 for (int j = 1; j < 5; j++)
                 {
-                    Pack.pack.Add(new Card(j, i));
+                    Pack.PackOfCards.Add(new Card(j, i));
                 }
             }
             List<Card> cards1= Pack.DealCard(16);
@@ -75,7 +75,6 @@ using System.Collections.Generic;
             { 
                 Console.WriteLine("Value = " + card.Value + " Suit = " + card.Suit);
             }
-
 
 
             Hand hand = new Hand();
@@ -96,7 +95,7 @@ using System.Collections.Generic;
             }
 
             Console.WriteLine("\n\nAdding 16 new cards to hand:");
-            foreach (Card card in hand.hand)
+            foreach (Card card in hand.HandOfCards)
             {
                 Console.WriteLine("Value = " + card.Value + " Suit = " + card.Suit);
             }
@@ -107,7 +106,13 @@ using System.Collections.Generic;
             Console.WriteLine("\n\nCard in hand at 3rd index: Value = " + card5.Value + " Suit = " + card5.Suit);
 
 
-    }
+
+            // Demonstrates the naming of a Card
+            foreach (Card card in hand.HandOfCards)
+            {
+                Console.WriteLine("Value = " + card.Value + " Suit = " + card.Suit + " Name = " + card.Name);
+            }
+    }       
 
 }
         

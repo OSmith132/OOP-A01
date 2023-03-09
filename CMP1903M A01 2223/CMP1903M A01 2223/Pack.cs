@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
     class Pack
     {
-        public static List<Card> pack = new List<Card>();
+        public static List<Card> PackOfCards = new List<Card>();
 
         static Pack()
         {
@@ -13,7 +13,7 @@ using System.Collections.Generic;
            {
                 for (int j = 1; j < 14; j++)
                 {
-                    pack.Add(new Card(j, i));
+                    PackOfCards.Add(new Card(j, i));
                 }
            }
 
@@ -25,24 +25,24 @@ using System.Collections.Generic;
         {
 
             // Guard Clause of more than 1 cards in a pack to shuffle
-            if (pack.Count >= 2)
+            if (PackOfCards.Count >= 2)
             {
 
                 // Fischer-Yates shuffle
                 if (typeOfShuffle == 1) 
                 {
 
-                    int endPointer = pack.Count - 1;
+                    int endPointer = PackOfCards.Count - 1;
                     Random rand = new Random();
 
                     while (endPointer > 0){
 
                         int numRand = rand.Next(0, endPointer);
-                        Card num1 = pack[numRand];
-                        Card num2 = pack[endPointer];
+                        Card num1 = PackOfCards[numRand];
+                        Card num2 = PackOfCards[endPointer];
 
-                        pack[endPointer] = num1;
-                        pack[numRand] = num2;
+                        PackOfCards[endPointer] = num1;
+                        PackOfCards[numRand] = num2;
                         
                         endPointer--;
                     }
@@ -57,21 +57,21 @@ using System.Collections.Generic;
                     List<Card> leftPack = new List<Card>();
 
                     // Divides the pack into two
-                    for (int i = 0; i < pack.Count / 2; i++) 
+                    for (int i = 0; i < PackOfCards.Count / 2; i++) 
                     {
-                        leftPack.Add(pack[i]);
+                        leftPack.Add(PackOfCards[i]);
                     }
 
-                    Card[] rightArray = pack.GetRange((pack.Count / 2) - 1, pack.Count - (pack.Count / 2)).ToArray();
+                    Card[] rightArray = PackOfCards.GetRange((PackOfCards.Count / 2) - 1, PackOfCards.Count - (PackOfCards.Count / 2)).ToArray();
                     List<Card> rightPack = new List<Card>(rightArray);
 
-                    pack.Clear();
+                    PackOfCards.Clear();
 
                     // Merges two packs together
                     for(int i=0; i < leftPack.Count; i++)
                     {
-                        pack.Add(leftPack[i]);
-                        pack.Add(rightPack[i]);
+                        PackOfCards.Add(leftPack[i]);
+                        PackOfCards.Add(rightPack[i]);
                     }
 
                     return true;
@@ -96,10 +96,10 @@ using System.Collections.Generic;
         public static Card Deal() // Deals one card from the pack (and removes it from the deck)
             {
 
-                if (pack.Count > 0)
+                if (PackOfCards.Count > 0)
                 {
-                    Card card = pack[0];
-                    pack.RemoveAt(0);
+                    Card card = PackOfCards[0];
+                    PackOfCards.RemoveAt(0);
                     return card;
                 }
                 else {
@@ -111,29 +111,29 @@ using System.Collections.Generic;
 
         public static void AddCard(Card card) // Returns a card to the pack (Additional Method)
         {
-            pack.Add(card);
+            PackOfCards.Add(card);
         }
 
         public static void AddCard(List<Card> cards) // Returns a list of card to the pack (Additional Method)
         {
-            pack.AddRange(cards);
+            PackOfCards.AddRange(cards);
         }
 
 
 
         public static List<Card> DealCard(int amount) // Deals multiple cards from the deck
         {
-            if(amount >= pack.Count) // Guard clause if user tries to deal more cards than is left in the pack -> will empty pack
+            if(amount >= PackOfCards.Count) // Guard clause if user tries to deal more cards than is left in the pack -> will empty pack
             {
-                amount = pack.Count;
+                amount = PackOfCards.Count;
             }
 
             List<Card> cards = new List<Card>();
 
             for(int i=0; i < amount; i++)
             {
-                cards.Add(pack[0]);
-                pack.RemoveAt(0);
+                cards.Add(PackOfCards[0]);
+                PackOfCards.RemoveAt(0);
             }
              
             return cards;

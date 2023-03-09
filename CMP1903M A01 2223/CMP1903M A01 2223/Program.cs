@@ -10,7 +10,6 @@
             Console.ReadLine(); // Waits for input to close window
 
         }
-
         
     }
 
